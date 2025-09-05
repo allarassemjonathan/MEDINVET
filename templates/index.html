@@ -194,6 +194,7 @@
       <p>Accompagnement personnalisé pour optimiser la gestion et la santé de vos animaux.</p>
     </div>
   </section>
+<!-- Posts -->
 
   <!-- Rendez-vous -->
   <section id="rendezvous">
@@ -234,6 +235,146 @@
     <p style="text-align:center;">📧 Email : <a href="mailto:abdoulayendiaye@gmail.com">abdoulayendiaye@gmail.com</a></p>
     <p style="text-align:center;">📞 Téléphone : +221 78 012 26 33</p>
   </section>
+  <!-- Display posts -->
+   <!-- Publications -->
+<!-- Publications -->
+ <section id="posts">
+  <h2>Publications</h2>
+
+  <!-- Create post form -->
+<h3 style="text-align: center;">Ajouter unne publication</h3>
+<form id="postForm" action="/create_post" method="POST">
+  <label for="title">Titre</label>
+  <input type="text" id="title" name="title" required>
+
+  <label for="content">Contenu</label>
+  <textarea id="content" name="content" rows="4" required></textarea>
+
+  <button type="submit">Publier</button>
+</form>
+
+<script>
+document.getElementById("postForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Stop normal submit
+
+  let password = prompt("Veuillez entrer le mot de passe pour publier :");
+  if (password === null) return; // If user cancels
+
+  // Create hidden password input dynamically
+  let input = document.createElement("input");
+  input.type = "hidden";
+  input.name = "password";
+  input.value = password;
+  this.appendChild(input);
+
+  this.submit(); // Continue submit
+});
+</script>
+</section>
+<section id="publications" class="publications">
+  <h2>Publications</h2>
+  <div id="post-list">
+    {% for post in posts %}
+      <div class="post-card">
+        <button class="post-toggle">
+          {{ post.title }}
+          <span class="arrow">▼</span>
+        </button>
+        <div class="post-content">
+          <p>{{ post.content }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.publications {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.publications h2 {
+  text-align: center;
+  color: #660000;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  border-bottom: 2px solid #660000; /* cyan accent */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-left: 4px solid #660000; /* cyan accent */
+}
+
+.post-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #660000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.post-toggle:hover {
+  background: rgba(0, 188, 212, 0.08); /* subtle cyan hover */
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.post-card.active .arrow {
+  transform: rotate(180deg);
+}
+
+.post-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 20px;
+}
+
+.post-card.active .post-content {
+  max-height: 500px; /* enough to expand content */
+  padding: 15px 20px;
+}
+
+.post-content p {
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
+}
+</style>
+
+<script>
+// Expand/collapse posts
+document.addEventListener("DOMContentLoaded", () => {
+  const toggles = document.querySelectorAll(".post-toggle");
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const card = toggle.parentElement;
+      card.classList.toggle("active");
+    });
+  });
+});
+</script>
+
+
 
   <footer>
     <p>&copy; 2025 Cabinet Vétérinaire - Dr Abdoulaye Ndiaye</p>
