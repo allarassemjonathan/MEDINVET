@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabinet Vétérinaire - Dr Abdoulaye Ndiaye</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background-color: #660000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 500;
+    }
+    nav {
+      background-color: #4d0000;
+      text-align: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 400;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      color: #660000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      display: block;
+      margin: auto;
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .about img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .about div {
+      flex: 1;
+      min-width: 250px;
+    }
+    .services .service-item {
+      background: #fff;
+      padding: 20px;
+      margin: 15px 0;
+      border-left: 6px solid #660000;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, select, textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+    }
+    button {
+      padding: 12px;
+      background: #660000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #990000;
+    }
+    footer {
+      background-color: #660000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cabinet Vétérinaire - Dr Abdoulaye Ndiaye</h1>
+  </header>
+
+  <nav>
+    <a href="#bienvenue">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#rendezvous">Rendez-vous</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Bienvenue -->
+  <section id="bienvenue" class="hero">
+    <h2>Bienvenue au Cabinet Vétérinaire</h2>
+    <img src="https://allarassemjonathan.github.io/devanture_vet.jpeg" alt="Devanture du cabinet vétérinaire">
+  </section>
+
+  <!-- À propos -->
+  <section id="apropos" class="about">
+    <img src="https://allarassemjonathan.github.io/owner_vet.jpeg" alt="Dr Abdoulaye Ndiaye">
+    <div>
+      <h2>Dr Abdoulaye Ndiaye</h2>
+      <p>
+        Le Dr Abdoulaye Ndiaye est un vétérinaire passionné spécialisé en médecine et chirurgie des animaux. 
+        Avec des années d’expérience, il accompagne les éleveurs et propriétaires dans le suivi médical, 
+        le conseil, et l’amélioration de la santé animale. Son engagement est de fournir des soins modernes, 
+        adaptés aux besoins des animaux et de leurs familles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Nos Services</h2>
+    <div class="service-item">
+      <h3>Médecine et chirurgie des animaux</h3>
+      <p>Soins complets et interventions chirurgicales pour assurer la santé et le bien-être de vos animaux.</p>
+    </div>
+    <div class="service-item">
+      <h3>Aviculture</h3>
+      <p>Conseils et suivi spécialisés pour l’élevage et la santé des volailles.</p>
+    </div>
+    <div class="service-item">
+      <h3>Insémination artificielle</h3>
+      <p>Techniques modernes pour améliorer la reproduction et la productivité des élevages.</p>
+    </div>
+    <div class="service-item">
+      <h3>Échographie</h3>
+      <p>Examens précis pour le diagnostic et le suivi de la santé des animaux.</p>
+    </div>
+    <div class="service-item">
+      <h3>Conseil et suivi d’élevage</h3>
+      <p>Accompagnement personnalisé pour optimiser la gestion et la santé de vos animaux.</p>
+    </div>
+  </section>
+
+  <!-- Rendez-vous -->
+  <section id="rendezvous">
+    <h2>Prendre Rendez-vous</h2>
+    <form action="https://formspree.io/f/xzzakbqg" method="POST">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Téléphone</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="date">Date souhaitée</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="service">Service demandé</label>
+      <select id="service" name="service" required>
+        <option value="">-- Choisir un service --</option>
+        <option value="medecine">Médecine et chirurgie</option>
+        <option value="aviculture">Aviculture</option>
+        <option value="insemination">Insémination artificielle</option>
+        <option value="echographie">Échographie</option>
+        <option value="conseil">Conseil et suivi d’élevage</option>
+      </select>
+
+      <label for="message">Informations supplémentaires</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Envoyer la demande</button>
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">📧 Email : <a href="mailto:abdoulayendiaye@gmail.com">abdoulayendiaye@gmail.com</a></p>
+    <p style="text-align:center;">📞 Téléphone : 78 012 26 33</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Cabinet Vétérinaire - Dr Abdoulaye Ndiaye</p>
+    <p>Tous droits réservés</p>
+  </footer>
+
+  <script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>
