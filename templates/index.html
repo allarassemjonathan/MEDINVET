@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cabinet MEDINVET</title>
+  <title>Clinique et pharmacie MEDINVET</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     body {
@@ -138,7 +138,7 @@
 <body>
 
   <header>
-    <h1>Cabinet Vétérinaire - Dr Abdoulaye Ndiaye</h1>
+    <h1>Clinique et pharmacie MEDINVET</h1>
   </header>
 
   <nav>
@@ -151,7 +151,7 @@
 
   <!-- Bienvenue -->
   <section id="bienvenue" class="hero">
-    <h2>Bienvenue ala clinique et pharmacie Vétérinaire</h2>
+    <h2>Bienvenue à la clinique et pharmacie Vétérinaire</h2>
     <img src="https://allarassemjonathan.github.io/best_front.jpeg" alt="Devanture du cabinet vétérinaire">
     <p>Votre partenaire de confiance pour la santé et le bien-être de vos animaux. Le Dr Ndiaye et son équipe vous accueillent dans un cadre moderne et chaleureux.</p>
   </section>
@@ -282,6 +282,13 @@ document.getElementById("postForm").addEventListener("submit", function(event) {
         </button>
         <div class="post-content">
           <p>{{ post.content }}</p>
+          
+          <!-- Delete button -->
+          <form action="/delete_post/{{ post.id }}" method="POST" class="delete-form">
+            <button type="submit" class="delete-btn" title="Supprimer">
+              Supprimer
+            </button>
+          </form>
         </div>
       </div>
     {% endfor %}
@@ -382,6 +389,21 @@ document.addEventListener("DOMContentLoaded", () => {
   </footer>
 
   <script>
+    // Confirm & add password before deleting
+    document.querySelectorAll(".delete-form").forEach(form => {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let password = prompt("Entrez le mot de passe pour supprimer :");
+        if (!password) return;
+        let input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "password";
+        input.value = password;
+        this.appendChild(input);
+        this.submit();
+      });
+    });
+
     // Reveal sections on scroll
     const sections = document.querySelectorAll("section");
     const revealOnScroll = () => {
