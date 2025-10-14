@@ -51,6 +51,11 @@
       opacity: 1;
       transform: translateY(0);
     }
+    section h1 {
+      color: #660000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
     section h2 {
       color: #660000;
       margin-bottom: 20px;
@@ -226,6 +231,55 @@
       color: #fff;
       background: #aa0000;
     } */
+    .hero-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* smaller gap */
+}
+
+.hero-images img {
+  height: 420px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  margin: 0; /* ensure no extra margin */
+  display: block;
+}
+
+#localisation {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .hero-images img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -240,13 +294,21 @@
     <a href="#services">Services</a>
     <a href="#rendezvous">Rendez-vous</a>
     <a href="#contact">Contact</a>
+    <a href="#localisation">Localisation</a>
+    <a href="#publications">Publication</a>
   </nav>
 
   <!-- Bienvenue -->
   <section id="bienvenue" class="hero">
-    <h2>Bienvenue à la clinique et pharmacie vétérinaires</h2>
-    <img src="https://allarassemjonathan.github.io/plaqueMedInVet.jpeg" alt="Devanture du cabinet vétérinaire">
-    <p>Votre partenaire de confiance pour la santé et le bien-être de vos animaux. Le Dr Ndiaye et son équipe vous accueillent dans un cadre moderne et chaleureux.</p>
+    <h1>Bienvenue à la clinique et pharmacie vétérinaires</h1>
+    <br>
+    <br>
+    <div class="hero-images">
+    <img src="https://allarassemjonathan.github.io/plaqueMedInVet.jpeg" alt="Devanture du cabinet vétérinaire 1">
+    <img src="https://allarassemjonathan.github.io/medinvet_devanture.jpeg" alt="Devanture du cabinet vétérinaire 2">
+    </div>
+    <br>
+  <p>Votre partenaire de confiance pour la santé et le bien-être de vos animaux. Le Dr Ndiaye et son équipe vous accueillent dans un cadre moderne et chaleureux.</p>
   </section>
 
   <!-- À propos -->
@@ -326,6 +388,22 @@
     <h2>Contact</h2>
     <p style="text-align:center;">📧 Email : <a href="mailto:abdoulayendiaye@gmail.com">abdoulayendiaye@gmail.com</a></p>
     <p style="text-align:center;">📞 Téléphone : +221 78 012 26 33</p>
+  </section>
+  
+  <!-- Localisation -->
+  <section id="localisation">
+    <h2>Localisation</h2>
+    <p style="text-align:center; color:#555; font-size:1.1rem;">
+      📍 Retrouvez-nous à Sébikotane, Sénégal
+    </p>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30867.40994281388!2d-17.174894482316045!3d14.74499959239516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1987087e46419%3A0xfaee82acb56085b5!2sSebikotane%2C%20Senegal!5e0!3m2!1sen!2sus!4v1760405785659!5m2!1sen!2sus" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </section>
 
   <!-- Publications -->
